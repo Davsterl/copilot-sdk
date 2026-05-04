@@ -1499,6 +1499,7 @@ export class CopilotClient {
                 envWithoutNodeDebug.COPILOT_CONNECTION_TOKEN = this.effectiveConnectionToken;
             }
 
+            // Set COPILOT_HOME if configured
             if (this.options.copilotHome) {
                 envWithoutNodeDebug.COPILOT_HOME = this.options.copilotHome;
             }

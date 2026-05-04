@@ -2386,6 +2386,8 @@ class CopilotClient:
 
         if self._effective_connection_token:
             env["COPILOT_CONNECTION_TOKEN"] = self._effective_connection_token
+
+        # Set COPILOT_HOME if configured
         if cfg.copilot_home:
             env["COPILOT_HOME"] = cfg.copilot_home
 

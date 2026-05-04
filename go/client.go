@@ -1491,6 +1491,11 @@ func (c *Client) startCLIServer(ctx context.Context) error {
 		c.process.Env = setEnvValue(c.process.Env, "COPILOT_HOME", c.options.CopilotHome)
 	}
 
+	// Set COPILOT_HOME if configured
+	if c.options.CopilotHome != "" {
+		c.process.Env = append(c.process.Env, "COPILOT_HOME="+c.options.CopilotHome)
+	}
+
 	if c.options.Telemetry != nil {
 		t := c.options.Telemetry
 		c.process.Env = setEnvValue(c.process.Env, "COPILOT_OTEL_ENABLED", "true")
